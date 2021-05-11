@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="panel" lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title id="ohp-title">CLARQUES PRO</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/search-bar.css">
+    <link rel="stylesheet" href="css/website-card.css">
+    <link rel="stylesheet" href="css/search-bar.css">
+    <link rel="stylesheet" href="css/colorpicker.css">
+    <link rel="stylesheet" href="css/swipe-content.css">
+    <link rel="stylesheet" href="css/alert.css">
+    <link rel="stylesheet" href="css/edit-website-card.css">
+    <link rel="icon"  href="favicon.ico?v=1"  type="image/x-ico" />
+
+    <!-- jQuery -->
+    <script src="scripts/jquery.min.js"> </script>
+    <!-- 引入swipe.js -->
+<!--    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.css">-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<!--    <script src="https://unpkg.com/swiper/swiper-bundle.js"> </script>-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+
+    <script src="scripts/index.js?v=7"></script>
+    <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+    <script src="scripts/md5.js"></script>
+    <script src="scripts/colorpicker.js?v=2"></script>
+    <script src="scripts/sundry.js?v=3"></script>
+    <script src="scripts/to_server.js?v=6.0"></script>
+    <script src="scripts/local.js?v=6.0"></script>
+    <script src="scripts/animations.js?v=2"></script>
+    <script src="scripts/alert.js"></script>
+    <script src="scripts/edit-websites.js?v=11.0"></script>
+</head>
+<body ondragstart="return false;">
+
+    <!--    搜索框     -->
+    <div class="search-bar standard">
+        <div class="search-engine">
+            <button class="search-engine-change" id="change-engine" onclick="zoomEngineContainer()">
+                <img class="search-engine-icon" src="images/search-engine-light.png">
+            </button>
+            <div class="search-engine-container" id="engine-container" style="display: none;opacity: 0">
+                <ul id="search-engine-ul">
+                    <li>
+                        <button class="change-search-engine selected-engine">
+                            <img onerror="this.src='../images/search-engine-light.png'" src="https://www.baidu.com/favicon.ico">
+                            baidu
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="search-input-block">
+            <input class="search-input" id="search-query" placeholder="搜索" type="text">
+        </div>
+        <div class="search-button">
+            <button class="search-engine-search" id="do-search">
+                <img src="images/search-light.png">
+            </button>
+        </div>
+    </div>
+
+    <div class="website-cards">
+        <div class="swiper-container" >
+
+            <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
+            <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper-container外面，需要自定义样式。-->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper" id="slide-container">
+
+                <div class="swiper-slide swiper-slide-container" id="settings">
+                    <div class="config scrollable" id="config">
+                        <div class="config-p">
+                            <div class="config-head">
+                                网址抽屉
+                            </div>
+                            <div class="split-line"></div>
+                            <div class="config-content">
+                                <div class="up-to-date-p websites-id-container">
+
+                                    <div class="websites-id-p add-new-websitesp">
+                                        +
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-p">
+                            <div class="config-head">
+                                搜索引擎
+                            </div>
+                            <div class="split-line"></div>
+                            <div class="config-content">
+
+                                <div class="search-engine-p add-new-search-engine standard">
+                                    +
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-p">
+                            <div class="config-head">
+                                One More Thing
+                            </div>
+                            <div class="split-line"></div>
+                            <div class="config-content">
+
+                                <div class="sundry-p">
+                                    <div class="sundry-content">
+                                        开启bing壁纸：
+                                    </div>
+                                    <section class="sundry-switcher">
+                                        <div class="checkbox">
+                                            <input id="set-bing-wall" type="checkbox"/>
+                                            <label></label>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <div class="sundry-p">
+                                    <div class="sundry-content">
+                                        背景颜色：
+                                    </div>
+                                    <input type="text" readonly="readonly" class="color-pick"  name="color" value="#f0f0f0">
+
+                                </div>
+
+                                <div class="sundry-p">
+                                    <div class="sundry-content">
+                                        热搜类型：
+                                    </div>
+                                    <button class="standard-button hot-b" id="hot-type-name">知乎热榜</button>
+                                    <div class="hot-choose standard" id="hot-type-selector"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide-container" id="links">
+                    <div class="weather-block standard">
+                        <div id="he-plugin-standard"></div>
+                        <script>
+                            WIDGET = {
+                                "CONFIG": {
+                                    "layout": "2",
+                                    "width": 230,
+                                    "height": 270,
+                                    "background": "1",
+                                    "borderRadius": "20",
+                                    "key": "49436dcf523f42dea61577cb9e2c886b"
+                                }
+                            }
+                        </script>
+                    </div>
+
+                    <div class="hot-content standard scrollable">
+                        <div class="hot-type link-block-head" id="hot-type">热搜类型</div>
+                        <div class="hot-container"></div>
+                    </div>
+
+                    <div class="date-block standard">
+                        <div class="clock-outer">
+                            <div class="clock">
+                                <span class="hours"></span>
+                                <span class="minutes"></span>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <div id="daymonth"></div>
+                            <div id="year"></div>
+                        </div>
+                    </div>
+
+                    <div class="recently-used standard">
+                        <div class="recently-used-head link-block-head">最近使用</div>
+                        <div class="recently-used-container"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="color-picker">
+        <div class="color-pan standard">
+            <div class="picker"></div>
+        </div>
+    </div>
+
+    <div class="b-w"></div>
+</body>
+
+<footer>
+    2020@CLARQUES-NAV BETA-v4
+</footer>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link type="text/css" rel="stylesheet" href="../css/website-card.css">
+    <link type="text/css" rel="stylesheet" href="../css/swipe-content.css">
+    <link type="text/css" rel="stylesheet" href="../css/alert.css">
+    <link type="text/css" rel="stylesheet" href="../css/edit-website-card.css">
+    <link type="text/css" rel="stylesheet" href="../css/colorpicker.css">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="../scripts/jquery.min.js"> </script>
+    <script src="../scripts/md5.js"></script>
+    <script src="../scripts/to_server.js"></script>
+    <script src="../scripts/local.js"></script>
+    <script src="../scripts/colorpicker.js"></script>
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/alert.js"></script>
+    <script src="../scripts/sundry.js"></script>
+    <script src="../scripts/edit-websites.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"> </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+</head>
+<body>
+
+    <div class="b-w"></div>
+
+    <div class="swiper-container">
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper" id="slide-container">
+
+            <div class="swiper-slide swiper-slide-container" id="settings">
+
+                <div class="config scrollable" id="config">
+                    <div class="config-p">
+                        <div class="config-head">
+                            同步
+                        </div>
+                        <div class="split-line"></div>
+                        <div class="config-content">
+                            <div class="login-pan standard">
+                                <div class="link-block-head">
+                                    账户
+                                </div>
+                                <div class="login-content">
+                                    Account:
+                                    <input class="standard-input uuuu" type="text">
+                                    Password:
+                                    <input class="standard-input pppp" type="password">
+
+                                    <button class="standard-button" id="login">Login</button>
+                                    <button class="standard-button" id="register">Register</button>
+
+
+                                </div>
+                            </div>
+
+                            <div class="up-to-date-p websites-id-container">
+
+                                <div class="websites-id-p add-new-websitesp">
+                                    +
+                                </div>
+                                <div class="websites-id-p add-new-with-id">
+                                    <input type="text" placeholder="websites-id" class="website-id-input ">
+                                </div>
+<!--                                <div class="websites-id-p">-->
+<!--                                    <p class="websites-id-p-f">-->
+<!--                                        CLARQUES NAV-->
+<!--                                    </p>-->
+<!--                                    <button class="websites-id-p-del">-->
+<!--                                        <img src="../images/websites-id-del.png">-->
+<!--                                    </button>-->
+<!--                                </div>-->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-p">
+                        <div class="config-head">
+                            搜索引擎设置
+                        </div>
+                        <div class="split-line"></div>
+                        <div class="config-content">
+
+                            <div class="search-engine-p add-new-search-engine standard">
+                                +
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-p">
+                        <div class="config-head">
+                            One More Thing
+                        </div>
+                        <div class="split-line"></div>
+                        <div class="config-content">
+
+                            <div class="sundry-p">
+                                <div class="sundry-content">
+                                    记住登录：
+                                </div>
+                                <section class="sundry-switcher">
+                                    <div class="checkbox">
+                                        <input id="remember-user" type="checkbox"/>
+                                        <label></label>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div class="sundry-p">
+                                <div class="sundry-content">
+                                    开启bing壁纸：
+                                </div>
+                                <section class="sundry-switcher">
+                                    <div class="checkbox">
+                                        <input id="set-bing-wall" type="checkbox"/>
+                                        <label></label>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div class="sundry-p">
+                                <div class="sundry-content">
+                                    热搜类型：
+                                </div>
+
+                                <button class="standard-button">知乎</button>
+                                <div class="hot-choose">
+                                    <div class="hot-choose-p">知乎</div>
+                                    <div class="hot-choose-p">微博</div>
+                                    <div class="hot-choose-p">贴吧</div>
+                                    <div class="hot-choose-p">bilibili</div>
+                                    <div class="hot-choose-p">AcFun</div>
+                                    <div class="hot-choose-p">微信</div>
+                                    <div class="hot-choose-p">GitHub</div>
+                                    <div class="hot-choose-p">开源中国</div>
+                                </div>
+                            </div>
+
+                            <div class="sundry-p">
+                                <div class="sundry-content">
+                                    背景颜色：
+                                </div>
+                                <input type="text" readonly="readonly" class="color-pick"  name="color" value="#f0f0f0">
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="swiper-slide swiper-slide-container" id="links">
+                <div class="weather-block standard">
+                    <div id="weather-v2-plugin-standard"></div>
+<!--                    <script>-->
+<!--                        WIDGET = {-->
+<!--                            CONFIG: {-->
+<!--                                "layout": 2,-->
+<!--                                "width": "230",-->
+<!--                                "height": "270",-->
+<!--                                "background": 5,-->
+<!--                                "dataColor": "4A4A4A",-->
+<!--                                "borderRadius": "20",-->
+<!--                                "key": "mMDF2Ml4ej"-->
+<!--                            }-->
+<!--                        }-->
+<!--                    </script>-->
+<!--                    <script src="https://apip.weatherdt.com/standard/static/js/weather-standard-common.js?v=2.0"></script>-->
+                </div>
+
+                <div class="hot-content standard">
+                    <div class="hot-type link-block-head" id="hot-type">热搜</div>
+                    <div class="hot-container">
+
+                    </div>
+                </div>
+
+                <div class="date-block standard">
+                    <div class="clock-outer">
+                        <div class="clock">
+                            <span class="hours"></span>
+                            <span class="minutes"></span>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <div id="daymonth"></div>
+                        <div id="year"></div>
+                    </div>
+                </div>
+
+                <div class="recently-used standard">
+                    <div class="recently-used-head link-block-head">最近使用</div>
+                    <div class="recently-used-container">
+                        <div class="recently-p">
+                            <a href="http://www.baidu.com" target="_blank">
+                                <div class="recently-in-a">
+                                    <img class="recently-img" onerror="this.src='../images/error-website.png'" src="https://www.baidu.com/favicon.ico">
+                                    <div class="recently-w">百度</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="recently-p">
+                            <a href="http://www.baidu.com" target="_blank">
+                                <div class="recently-in-a">
+                                    <img class="recently-img" onerror="this.src='../images/error-website.png'" src="https://www.baidu.com/">
+                                    <div class="recently-w">百度</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 每页最多6个 website-card -->
+<!--            <div class="swiper-slide swiper-slide-container website-c-sig">-->
+
+<!--            </div>-->
+
+        </div>
+
+
+    </div>
+
+    <div class="color-picker">
+        <div class="color-pan standard">
+            <div class="picker"></div>
+        </div>
+    </div>
+
+</body>
+</html>

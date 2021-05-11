@@ -1,0 +1,132 @@
+
+.search-bar {
+    margin-top: 5%;
+    outline: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 6%;
+    min-height: 55px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: var(--back);
+
+    z-index: 99999999999999;
+}
+
+.search-input {
+    outline: inherit;
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: inherit;
+    background-color: var(--back);
+    font-size: 180%;
+}
+
+.search-input-block {
+    height: 100%;
+    width: 86%;
+}
+
+.search-button {
+    width: 7%;
+    height: 100%;
+}
+
+.search-engine {
+    width: 7%;
+    height: 100%;
+}
+
+.search-engine-search {
+    cursor: pointer;
+    padding: 5px;
+    outline: inherit;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    transition: 0.2s;
+}
+
+.search-engine-change {
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    outline: inherit;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    transition: 0.2s;
+}
+
+.search-engine-change:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-engine-search:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-engine-change:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.search-engine-search:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.search-engine-container {
+    position: absolute;
+    z-index: 9999999999;
+    display: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    color: var(--fontcolor);
+    background-color: var(--back);
+}
+
+.search-engine-container ul li{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.change-search-engine {
+    cursor: pointer;
+    outline: inherit;
+    padding: 6px;
+    width: 70px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    vertical-align: middle;
+    transition: 0.2s;
+}
+
+.selected-engine{
+    box-shadow: inset 4px 4px 4px var(--border-d),
+    inset -4px -4px 4px var(--border-b);
+}
+
+.change-search-engine:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.change-search-engine img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.search-engine-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}

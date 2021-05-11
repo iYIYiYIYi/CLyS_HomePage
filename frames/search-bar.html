@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link href="../css/search-bar.css" rel="stylesheet">
+        <link href="../css/index.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../css/index.css">
+        <link type="text/css" rel="stylesheet" href="../css/website-card.css">
+        <link type="text/css" rel="stylesheet" href="../css/swipe-content.css">
+        <link type="text/css" rel="stylesheet" href="../css/alert.css">
+        <link type="text/css" rel="stylesheet" href="../css/edit-website-card.css">
+        <link type="text/css" rel="stylesheet" href="../css/colorpicker.css">
+        <script src="../scripts/animations.js"></script>
+        <script>
+            function zoomEngineContainer() {
+                container = document.getElementById("engine-container");
+                if (container.style.display == 'none'){
+                    uniformOpacity(container,0.2,true);
+                } else {
+                    uniformOpacity(container,0.2,false);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="search-bar">
+            <div class="search-engine">
+                <button class="search-engine-change" id="change-engine" onclick="zoomEngineContainer()">
+                    <img src="../images/search-engine-light.png">
+                </button>
+                <div class="search-engine-container" id="engine-container" style="display: none;opacity: 0">
+                    <ul>
+                        <li>
+                            <img src="../images/search-engine-light.png">
+                        </li>
+                        <li>
+                            <img src="../images/search-engine-light.png">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search-input-block">
+                <input class="search-input" id="search-query" placeholder="搜索" type="text">
+            </div>
+            <div class="search-button">
+                <button class="search-engine-search" id="do-search" onclick="alert('aaa')">
+                    <img src="../images/search-light.png">
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
